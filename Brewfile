@@ -69,7 +69,7 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Paprika Recipe Manager 3", id: 1303222628
 mas "TestFlight", id: 899247664
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 vscode "1password.op-vscode"
 vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "bradlc.vscode-tailwindcss"

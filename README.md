@@ -34,10 +34,9 @@ See previous version of my setup and configuration for macOS 10.15 Catalina thro
 
 4. My personal todo list of manual actions:
 
-   - [ ] This script will open, Alfred, Moom, Docker Desktop. You must manually grant them the needed permissions and enable start at boot
-   - [ ] Grant Full disk access to Alfred and Terminal
+   - [ ] This script will open Docker Desktop. You must manually grant the needed permissions and enable start at boot.
+   - [ ] Grant Full disk access to Terminal.
    - [ ] Reboot `sudo shutdown -r now`
-   - [ ] Connect to Firefox sync or copy profile folder (open _about:profiles_)
    - [ ] Install Xcode `mas install 497799835` (was removed from this script because the 12GB+ download can be slow as hell)
 
 ### Pull and apply latest changes from this repo
@@ -48,7 +47,7 @@ chezmoi update
 
 ### Edit files and push changes
 
-For example, modify `~/.vimrc` (already managed by chezmoi)
+For example, modify `~/.zshrc` (already managed by chezmoi)
 
 ```sh
 chezmoi edit ~/.zshrc
@@ -98,12 +97,11 @@ chezmoi git push
 ## Applications
 
 This repo includes scripts to
-[install](run_once_before_3-install-packages-darwin.sh.tmpl) as well as
-[build](run_once_before_5-build-apps-darwin.sh.tmpl) all the apps that need to be.
+[install](run_once_before_3-install-packages-darwin.sh.tmpl) all the apps that need to be.
 
 ## Mac OS configuration
 
-This repo includes a [script to configure](run_once_after_configure-apps-darwin.sh.tmpl) my Mac OS and several applications settings.
+This repo includes a [script to configure](run_once_after_configure-apps-darwin.sh.tmpl) Mac OS and several applications settings.
 
 ## Forking
 

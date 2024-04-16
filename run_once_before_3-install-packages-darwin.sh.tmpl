@@ -1,0 +1,22 @@
+#!/bin/bash
+{{ if (eq .chezmoi.os "darwin") -}}
+
+# Close App Store apps in case this script updates them
+killall iMovie Xcode
+
+# Disable quarantine for casks
+export HOMEBREW_CASK_OPTS=--no-quarantine
+
+brew bundle
+
+{{ end -}}
+
+# Install latest stable version of Node.js
+# volta install node
+
+# Install latest versions of global Node.js packages
+npm install -g\
+  stylelint@latest\
+  textlint@latest\
+  typescript@latest\
+  nx@latest
