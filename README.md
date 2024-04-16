@@ -39,6 +39,18 @@ See previous version of my setup and configuration for macOS 10.15 Catalina thro
    - [ ] Reboot `sudo shutdown -r now`
    - [ ] Install Xcode `mas install 497799835` (was removed from this script because the 12GB+ download can be slow as hell)
 
+## System preparation and package installation
+
+This repo includes scripts to
+[prepare system](run_once_before_1-prepare-system.sh.tmpl),
+[configure system](run_once_before_2-configure-system-darwin.sh.tmpl), and
+[install packages](run_once_before_3-install-packages-darwin.sh.tmpl). Run these once.
+
+
+## Application configuration
+
+This repo includes a [script to configure](run_once_after_configure-apps-darwin.sh.tmpl) several applications settings. Run this after installing the applications.
+
 ### Pull and apply latest changes from this repo
 
 ```sh
@@ -93,15 +105,6 @@ chezmoi git add .
 chezmoi git commit
 chezmoi git push
 ```
-
-## Applications
-
-This repo includes scripts to
-[install](run_once_before_3-install-packages-darwin.sh.tmpl) all the apps that need to be.
-
-## Mac OS configuration
-
-This repo includes a [script to configure](run_once_after_configure-apps-darwin.sh.tmpl) Mac OS and several applications settings.
 
 ## Forking
 
