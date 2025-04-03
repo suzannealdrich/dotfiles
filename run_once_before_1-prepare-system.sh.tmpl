@@ -6,6 +6,6 @@ gpg --import {{ .chezmoi.sourceDir }}/keys/*
 gpg-connect-agent "scd serialno" "learn --force" /bye
 
 # Install Rosetta on Mac m1
-{{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64")) }}
+{{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") (not .codespaces)) }}
 softwareupdate --install-rosetta --agree-to-license
 {{ end }}

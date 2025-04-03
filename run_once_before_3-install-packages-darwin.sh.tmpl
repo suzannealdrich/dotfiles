@@ -1,5 +1,5 @@
 #!/bin/bash
-{{ if (eq .chezmoi.os "darwin") -}}
+{{- if (and (eq .chezmoi.os "darwin") (not .codespaces)) -}}
 
 # Close App Store apps in case this script updates them
 killall iMovie Xcode
