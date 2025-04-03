@@ -1,6 +1,6 @@
 [user]
 	name = Suzanne Aldrich
-	email = suzanne@sjaconsulting.com
+	email = suzannealdrich@users.noreply.github.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINND3+fbOnrcrYlFqtl6rNtvEnhcwxPsjnPmHbsx+brO
 [github]
 	user = suzannealdrich
@@ -17,3 +17,12 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential "https://github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential

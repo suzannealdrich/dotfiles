@@ -60,3 +60,4 @@ export PATH="/usr/local/sbin:$PATH"
 
 eval "$(starship init zsh)"
 test -e /Users/suzannealdrich/.iterm2_shell_integration.zsh && source /Users/suzannealdrich/.iterm2_shell_integration.zsh || true
+source /Users/suzannealdrich/.config/op/plugins.sh
