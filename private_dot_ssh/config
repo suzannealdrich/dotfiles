@@ -1,4 +1,9 @@
-Host 10.1.10.101
+Include ~/.ssh/1Password/config
+Host 10.1.10.101 
+  ForwardAgent yes
+Host tunnel.infra.sjaconsulting.net
+  ForwardAgent yes
+Host dockerhost01.infra.sjaconsulting.net
   ForwardAgent yes
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

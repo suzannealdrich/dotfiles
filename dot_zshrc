@@ -61,3 +61,27 @@ export PATH="/usr/local/sbin:$PATH"
 eval "$(starship init zsh)"
 test -e /Users/suzannealdrich/.iterm2_shell_integration.zsh && source /Users/suzannealdrich/.iterm2_shell_integration.zsh || true
 source /Users/suzannealdrich/.config/op/plugins.sh
+
+# Source - https://stackoverflow.com/a
+# Posted by Kyle Venn
+# Retrieved 2025-12-29, License - CC BY-SA 4.0
+
+# Init Homebrew to get `HOMEBREW_PREFIX`
+eval "$(brew shellenv)"
+
+# Delete brew's objectively worse git completion
+remove_conflicting_git_completions() {
+    local git_completion_bash="$HOMEBREW_PREFIX/share/zsh/site-functions/git-completion.bash"
+    local git_completion_zsh="$HOMEBREW_PREFIX/share/zsh/site-functions/_git"
+
+    [ -e "$git_completion_bash" ] && rm "$git_completion_bash"
+    [ -e "$git_completion_zsh" ] && rm "$git_completion_zsh"
+}
+
+# This needs to run every time since brew sometimes brings those files back
+remove_conflicting_git_completions
+
+# Add Homebrew's site functions to fpath (minus git, because that causes conflicts)
+# This will give you autocomplete for _other_ things you installed
+# from brew (like `just`, or `exa`, or `k6`)
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)

@@ -1,5 +1,5 @@
 #!/bin/bash
-{{- if (and (eq .chezmoi.os "darwin") (not .codespaces)) -}}
+{{ if (eq .chezmoi.os "darwin") -}}
 
 osascript -e 'tell application "System Preferences" to quit'
 
